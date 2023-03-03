@@ -63,9 +63,27 @@ tibble1 %>%
 # ggplot2
 
 ```{r}
-
+tibble2 <- tibble::tibble(
+  x = 1:20,
+  y = x^2, 
+  z = x^2.5
+)
 ```
 
+```{r}
+tibble2 %>% 
+  
+  ggplot2::ggplot(aes(x = x, y = y)) + 
+  geom_point()
+```
+
+```{r}
+tibble2 %>% 
+  
+  ggplot2::ggplot() + 
+  geom_point(aes(x = x, y = y), color = 'blue') + 
+  geom_point(aes(x = x, y = z), color = 'red')
+```
 
 # A basic brain plot
 
